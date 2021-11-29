@@ -2,7 +2,6 @@ import styles from "./Tweet.module.css";
 
 export default function Tweet({ tweet }) {
     const { user } = tweet;
-    console.log(user);
     return (
         <div className={styles["tweet-container"]}>
             <img
