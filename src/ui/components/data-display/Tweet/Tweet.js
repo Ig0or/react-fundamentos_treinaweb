@@ -1,4 +1,5 @@
 import styles from "./Tweet.module.css";
+import { DateService } from "../../../../data/services/DateService";
 
 export default function Tweet({ tweet }) {
     const { user } = tweet;
@@ -14,7 +15,10 @@ export default function Tweet({ tweet }) {
                 <span className={styles["user-username"]}>
                     @{user.username}
                 </span>
-                <span className={styles["date"]}> - {tweet.date}</span>
+                <span className={styles["date"]}>
+                    {" "}
+                    - {DateService.relativeTime(tweet.date)}
+                </span>
             </div>
             <div className={styles["tweet-text"]}>{tweet.text}</div>
         </div>
